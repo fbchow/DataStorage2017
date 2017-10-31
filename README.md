@@ -27,7 +27,7 @@ $ python flask.py
 
 Pick a data set, and ask some questions about it. To explore your questions, build a web app with Python and PostgreSQL which exposes views of the data in tables, forms for entering queries, and/or graphs and other visualizations.
 
-Extract data from 
+Extract data from American Community Survey (conducted by Census Bureau) 
 https://www.census.gov/programs-surveys/acs/data/data-via-ftp.html
 
 For ideas you can go to
@@ -49,6 +49,7 @@ Please submit a peer review to Canvas. It should be a short sentence about your 
 - willingness to work 
   
 
+@fbchow @kevinisagirl @raptortech-js  
  
 
  
