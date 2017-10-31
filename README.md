@@ -10,15 +10,15 @@ You may use this space for a full description of your questions and results, or 
 Flask app
 deploy via ncf server?  
 
-To deploy:  
-`
-$ python flask.py  
-`
+#HOW TO RUN ON YOUR OWN LOCAL MACHINE
+`$ python routes.py`
 
 # possible file tree
- * flask.py
+ * routes.py
  * templates 
+	* contains all the templates for Flask
  * static
+	* contains all the static content, like css
  
  
 
@@ -49,7 +49,7 @@ Please submit a peer review to Canvas. It should be a short sentence about your 
 - willingness to work 
   
 ### Authors  
-[@fbchow](https://github.com/fbchow), [@kevinisagirl](https://github.com/kevinisagirl), @raptortech-js](https://github.com/raptortech-js)     
+[@fbchow](https://github.com/fbchow), [@kevinisagirl](https://github.com/kevinisagirl), [@raptortech-js](https://github.com/raptortech-js)     
 
 
  
