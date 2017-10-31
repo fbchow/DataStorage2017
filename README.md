@@ -4,13 +4,31 @@ Create a branch of this repo for your project.
 
 Replace this README with an introduction to your project, including instructions for how to view the deployed web page and requirements for building it.
 
-You may use this space for a full description of your questions and results, or you may point to other documents, including your web page.
+You may use this space for a full description of your questions and results, or you may point to other documents, including your web page.  
+
+
+Flask app
+deploy via ncf server?  
+
+To deploy:  
+`
+$ python flask.py  
+`
+
+# possible file tree
+ * flask.py
+ * templates 
+ * static
+ 
+ 
+
 
 # Project
 
 Pick a data set, and ask some questions about it. To explore your questions, build a web app with Python and PostgreSQL which exposes views of the data in tables, forms for entering queries, and/or graphs and other visualizations.
 
-Project teams are posted here.
+Extract data from 
+https://www.census.gov/programs-surveys/acs/data/data-via-ftp.html
 
 For ideas you can go to
 
