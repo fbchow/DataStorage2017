@@ -2,6 +2,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # connect flask to db using connection string that sql alchemy expects
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://DB_USER:PASSWORD@HOST/DATABASE'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/usTransportation'
 db.init_app(app)
 
