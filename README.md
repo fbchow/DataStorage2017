@@ -48,8 +48,11 @@ Please submit a peer review to Canvas. It should be a short sentence about your 
 - relevant technical skill
 - willingness to work 
   
+[fbchow_github]: https://github.com/fbchow
+[kevinisagirl github]: https://github.com/kevinisagirl
+[raptortech-js github]: https://github.com/raptortech-js  
 
-@fbchow @kevinisagirl @raptortech-js  
+
  
 
  
