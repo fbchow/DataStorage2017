@@ -1,0 +1,102 @@
+---
+title: "Clean Tampa County Files First"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Step 0: Read in libraries 
+```{r, message=FALSE, warning=FALSE}
+rm(list=ls())
+library(tidyverse)
+library(purrr)
+library(data.table)
+```
+
+
+Step 1: Set working directories
+```{r}
+my_directory <- "/Users/fanny/Google Drive/db/usTransportation/data"
+setwd(my_directory)
+```
+
+Step 2: Capture a list of files in directory
+```{r}
+files <- list.files(my_directory, pattern="*.csv", full.names=TRUE) 
+#files
+```
+
+
+Step 3: Read in files and combine
+```{r}
+read_county_files <- function(filename){
+    x <- fread(filename, skip=0, na.strings = c("(X)"))
+    
+    # obtain the path, which has the year in filename
+    x <- mutate(x, Filename=sub(my_directory, "", filename))
+    return(x)
+}
+
+combined <- map_df(files, read_county_files)
+#View(combined)
+```
+
+
+Step 4: Create function for reading in filename string
+split on the underscore (_)  
+For example:
+create array from filename "ACS_16_1YR_S0801"
+which looks like c("ACS", "16", "1YR", "S0801")
+we can pull out the year 16 from the array  
+```{r}
+strsplit_that_works <- function(cell, entity_requested) {
+  x <- strsplit(cell, "_")
+  y <- x[[1]][entity_requested]
+  return(y)
+}
+```
+
+
+
+
+Step 5: Only keep columns that start with HC01  
+Since we're not interested in male and female marginal counts, let's only keep the total counts.   
+```{r}
+processed_frame <- combined %>%
+  mutate(year = map_chr(Filename, strsplit_that_works, 2)) %>% 
+  select(-starts_with("HC02")) %>% 
+  select(-starts_with("HC03"))
+View(processed_frame)
+```
+
+Step 6: Sanity check  
+
+show that the year variable exists for the data frame  
+```{r}
+#select(processed_frame, year)
+```
+
+Sanity check: select the variable of interest HC01_EST_VC52  
+```{r}
+#select(processed_frame, starts_with("HC01_EST_VC52"))
+```
+
+
+
+Step 7: Write out
+```{r}
+write_csv(processed_frame, "processed_american_factfinder_transportation.csv")
+```
+
+
+
+
+
+
+
+
+
+
