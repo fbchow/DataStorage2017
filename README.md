@@ -23,19 +23,17 @@ deploy via ncf server?
  
 
 
-# Project
+# Data
 
 Pick a data set, and ask some questions about it. To explore your questions, build a web app with Python and PostgreSQL which exposes views of the data in tables, forms for entering queries, and/or graphs and other visualizations.
 
-Extract data from American Community Survey (conducted by Census Bureau) 
-https://www.census.gov/programs-surveys/acs/data/data-via-ftp.html
+*  downloaded files from American Community Survey (conducted by Census Bureau) 
+https://www.census.gov/programs-surveys/acs/data/data-via-ftp.html  
 
-For ideas you can go to
+*  cleaned & combined files into 1 big csv using dplyr & tidyverse R packages
 
-- [kaggle](https://www.kaggle.com/datasets)
-- [Yelp](https://www.yelp.com/dataset)
-- [FRED](https://fred.stlouisfed.org/)
-- Etc.
+*  see \data repository 
+
 
 # Teams
 
