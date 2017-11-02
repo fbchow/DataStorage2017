@@ -1,0 +1,60 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+
+<div class="content">
+    <div class=row>
+
+            <div class="col-md-3">
+                    &nbsp;
+            </div>
+            <div class="col-md-6"> 
+                    
+                    
+                        <div id="donutchart" style="width: 900px; height: 500px;"></div>
+            </div>
+            
+                   
+
+
+    </div>
+
+</div>
+
+<script>
+
+google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(seedData());
+
+        var options = {
+          title: 'Mode Of Transportation',
+          pieHole: 0.2,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+
+
+
+
+
+// Seed data to populate donut pie chart
+function seedData() {
+    // var strJson = JSON.stringify('{{loaded_r}}');
+
+    var obj =  JSON.parse('{{data | safe}}');
+  return obj;
+
+
+}
+</script>
+
+
+
+{% endblock %}
