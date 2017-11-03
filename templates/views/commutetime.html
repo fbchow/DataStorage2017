@@ -1,0 +1,63 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', "United States", "Florida", "Collier County","Lee County",
+        "Manatee County", "Osceola County", "St. Johns County"],
+        ['2010',  {{datadict3['0100000US'][2010]}}, {{datadict3['0400000US12'][2010]}},
+        {{datadict3['0500000US12021'][2010]}}, {{datadict3['0500000US12071'][2010]}},
+        {{datadict3['0500000US12081'][2010]}}, {{datadict3['0500000US12097'][2010]}},
+        {{datadict3['0500000US12109'][2010]}}],
+        ['2011',  {{datadict3['0100000US'][2011]}}, {{datadict3['0400000US12'][2011]}},
+        {{datadict3['0500000US12021'][2011]}}, {{datadict3['0500000US12071'][2011]}},
+        {{datadict3['0500000US12081'][2011]}}, {{datadict3['0500000US12097'][2011]}},
+        {{datadict3['0500000US12109'][2011]}}],
+        ['2012',   {{datadict3['0100000US'][2012]}}, {{datadict3['0400000US12'][2012]}},
+        {{datadict3['0500000US12021'][2012]}}, {{datadict3['0500000US12071'][2012]}},
+        {{datadict3['0500000US12081'][2012]}}, {{datadict3['0500000US12097'][2012]}},
+        {{datadict3['0500000US12109'][2012]}}],
+        ['2013',   {{datadict3['0100000US'][2013]}}, {{datadict3['0400000US12'][2013]}},
+        {{datadict3['0500000US12021'][2013]}}, {{datadict3['0500000US12071'][2013]}},
+        {{datadict3['0500000US12081'][2013]}}, {{datadict3['0500000US12097'][2013]}},
+        {{datadict3['0500000US12109'][2013]}}],
+        ['2014',   {{datadict3['0100000US'][2014]}}, {{datadict3['0400000US12'][2014]}},
+        {{datadict3['0500000US12021'][2014]}}, {{datadict3['0500000US12071'][2014]}},
+        {{datadict3['0500000US12081'][2014]}}, {{datadict3['0500000US12097'][2014]}},
+        {{datadict3['0500000US12109'][2014]}}],
+        ['2015',   , {{datadict3['0400000US12'][2015]}},
+        {{datadict3['0500000US12021'][2015]}}, {{datadict3['0500000US12071'][2015]}},
+        {{datadict3['0500000US12081'][2015]}}, {{datadict3['0500000US12097'][2015]}},
+        {{datadict3['0500000US12109'][2015]}}],
+        ['2016',   {{datadict3['0100000US'][2016]}}, {{datadict3['0400000US12'][2016]}},
+        {{datadict3['0500000US12021'][2016]}}, {{datadict3['0500000US12071'][2016]}},
+        {{datadict3['0500000US12081'][2016]}}, {{datadict3['0500000US12097'][2016]}},
+        {{datadict3['0500000US12109'][2016]}}],
+        
+      ]);
+
+      var options = {
+        title: 'Mean travel time to work',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }
+
+  </script>
+
+
+
+{% endblock %}

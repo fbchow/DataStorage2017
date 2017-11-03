@@ -1,0 +1,70 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div id="chart_div" style="width: 900px; height: 1000px"></div>
+
+
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawBasic);
+
+    function drawBasic() {
+      var data = google.visualization.arrayToDataTable([
+      ['Location', 'Male to Female Ratio'],
+      ["United States", {{bikingdict['0100000US']}}],
+      ["Florida", {{bikingdict['0400000US12']}}],
+      ["Alachua County", {{bikingdict['0500000US12001']}}],  
+      ["Bay County", {{bikingdict['0500000US12005']}}],
+      ["Brevard County", {{bikingdict['0500000US12009']}}],  
+      ["Broward County", {{bikingdict['0500000US12011']}}],
+      ["Citrus County", {{bikingdict['0500000US12017']}}], 
+      ["Clay County", {{bikingdict['0500000US12019']}}],  
+      ["Collier County", {{bikingdict['0500000US12021']}}], 
+      ["Duval County", {{bikingdict['0500000US12031']}}],
+      ["Escambia County",{{bikingdict['0500000US12033']}}], 
+      ["Hernando County",{{bikingdict['0500000US12053']}}],
+      [ "Hillsborough County",{{bikingdict['0500000US12057']}}], 
+      ["Lake County", {{bikingdict['0500000US12069']}}], 
+      ["Lee County", {{bikingdict['0500000US12071']}}], 
+      ["Leon County", {{bikingdict['0500000US12073']}}],  
+      ["Manatee County", {{bikingdict['0500000US12081']}}], 
+      ["Marion County", {{bikingdict['0500000US12083']}}], 
+      ["Martin County", {{bikingdict['0500000US12085']}}], 
+      ["Miami-Dade County", {{bikingdict['0500000US12086']}}], 
+      ["Monroe County", {{bikingdict['0500000US12087']}}],
+      ["Okaloosa County", {{bikingdict['0500000US12091']}}],
+      ["Orange County", {{bikingdict['0500000US12095']}}],  
+      ["Osceola County", {{bikingdict['0500000US12097']}}],
+      ["Palm Beach County", {{bikingdict['0500000US12099']}}], 
+      ["Pasco County", {{bikingdict['0500000US12101']}}],
+      ["Pinellas County", {{bikingdict['0500000US12103']}}],  
+      ["Polk County", {{bikingdict['0500000US12105']}}],
+      ["St. Johns County", {{bikingdict['0500000US12109']}}], 
+      ["St. Lucie County", {{bikingdict['0500000US12111']}}],
+      ["Sarasota County", {{bikingdict['0500000US12115']}}],
+      ["Seminole County", {{bikingdict['0500000US12117']}}],
+      ["Volusia County", {{bikingdict['0500000US12127']}}]
+      ]);
+
+      var options = {
+        title: 'Gender Differences in Biking 2016',
+        hAxis: {
+          title: 'Male to Female Ratio',
+        },
+        vAxis: {
+          title: 'Region'
+        },
+        bar: {groupWidth: '90%' }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+  </script>
+
+
+
+{% endblock %}

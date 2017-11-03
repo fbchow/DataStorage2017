@@ -1,0 +1,57 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{{datadict2['0500000US12021'][2016]}}
+{{datadict2['0500000US12021'][2010]}}
+<div id="scatter_chart" style="width: 300px; height: 500px"></div>
+    
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawScatter);
+  
+        function drawScatter() {
+            var data = google.visualization.arrayToDataTable([
+            ["United States", "Florida", "Alachua County","Bay County","Brevard County","Broward County",
+            "Citrus County","Clay County","Collier County","Duval County",
+            "Escambia County","Hernando County","Highlands County","Hillsborough County",
+            "Lake County","Lee County","Leon County","Manatee County","Marion County",
+            "Martin County","Miami-Dade County","Monroe County","Okaloosa County","Orange County",
+            "Osceola County","Palm Beach County","Pasco County","Pinellas County","Polk County",
+            "St. Johns County","St. Lucie County","Sarasota County","Seminole County","Volusia County"],
+                [{{datadict2['0100000US'][2016]}}/{{datadict2['0100000US'][2010]}}-1, {{datadict2['0400000US12'][2016]}}/{{datadict2['0400000US12'][2010]}}-1,
+                {{datadict2['0500000US12001'][2016]}}/{{datadict2['0500000US12001'][2010]}}-1,  {{datadict2['0500000US12005'][2016]}}/{{datadict2['0500000US12005'][2010]}}-1,
+                {{datadict2['0500000US12009'][2016]}}/{{datadict2['0500000US12009'][2010]}}-1,  {{datadict2['0500000US12011'][2016]}}/{{datadict2['0500000US12011'][2010]}}-1,
+                {{datadict2['0500000US12017'][2016]}}/{{datadict2['0500000US12017'][2010]}}-1,  {{datadict2['0500000US12019'][2016]}}/{{datadict2['0500000US12019'][2010]}}-1,  
+                {{datadict2['0500000US12021'][2016]}}/{{datadict2['0500000US12021'][2010]}}-1,
+                {{datadict2['0500000US12031'][2016]}}/{{datadict2['0500000US12031'][2010]}}-1,
+                {{datadict2['0500000US12033'][2016]}}/{{datadict2['0500000US12033'][2010]}}-1,
+                {{datadict2['0500000US12053'][2016]}}/{{datadict2['0500000US12053'][2010]}}-1,  {{datadict2['0500000US12055'][2016]}}/{{datadict2['0500000US12055'][2010]}}-1,
+                {{datadict2['0500000US12057'][2016]}}/{{datadict2['0500000US12057'][2010]}}-1,
+                {{datadict2['0500000US12069'][2016]}}/{{datadict2['0500000US12069'][2010]}}-1, {{datadict2['0500000US12071'][2016]}}/{{datadict2['0500000US12071'][2010]}}-1,
+                {{datadict2['0500000US12073'][2016]}}/{{datadict2['0500000US12073'][2010]}}-1,  {{datadict2['0500000US12081'][2016]}}/{{datadict2['0500000US12081'][2010]}}-1,
+                {{datadict2['0500000US12083'][2016]}}/{{datadict2['0500000US12083'][2010]}}-1,  {{datadict2['0500000US12085'][2016]}}/{{datadict2['0500000US12085'][2010]}}-1,
+                {{datadict2['0500000US12086'][2016]}}/{{datadict2['0500000US12086'][2010]}}-1, {{datadict2['0500000US12087'][2016]}}/{{datadict2['0500000US12087'][2010]}}-1,
+                {{datadict2['0500000US12091'][2016]}}/{{datadict2['0500000US12091'][2010]}}-1,
+                {{datadict2['0500000US12095'][2016]}}/{{datadict2['0500000US12095'][2010]}}-1,  {{datadict2['0500000US12097'][2016]}}/{{datadict2['0500000US12097'][2010]}}-1,
+                {{datadict2['0500000US12099'][2016]}}/{{datadict2['0500000US12099'][2010]}}-1, {{datadict2['0500000US12101'][2016]}}/{{datadict2['0500000US12101'][2010]}}-1,
+                {{datadict2['0500000US12103'][2016]}}/{{datadict2['0500000US12103'][2010]}}-1,  {{datadict2['0500000US12105'][2016]}}/{{datadict2['0500000US12105'][2010]}}-1,
+                {{datadict2['0500000US12109'][2016]}}/{{datadict2['0500000US12109'][2010]}}-1,
+                {{datadict2['0500000US12111'][2016]}}/{{datadict2['0500000US12111'][2010]}}-1,
+                {{datadict2['0500000US12115'][2016]}}/{{datadict2['0500000US12115'][2010]}}-1,  {{datadict2['0500000US12117'][2016]}}/{{datadict2['0500000US12117'][2010]}}-1,
+                {{datadict2['0500000US12127'][2016]}}/{{datadict2['0500000US12127'][2010]}}-1]
+            ]);
+        
+            var options = {
+                title: 'Percent Change in Workers Older than 16 Since 2010',
+                hAxis: {textPosition: 'none'},
+                vAxis: {title: 'Percent Change', viewWindow:{min: 0.23, max:.34} },
+                legend: 'none'
+            };
+        
+            var chart = new google.visualization.ScatterChart(document.getElementById('scatter_chart'));
+            chart.draw(data, options);
+        }
+
+    </script>
+
+{% endblock %}
