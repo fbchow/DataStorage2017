@@ -94,9 +94,9 @@ def biking():
     genderbiking16 = Transportation.query.filter(Transportation.year == 2016)
     bikingdict = defaultdict(dict)
     for county in genderbiking16:
-        if county.hc02_est_vc12 != "null" and county.hc02_est_vc12 is not None and county.hc03_est_vc12 != "null" and county.hc03_est_vc12 is not None:
-            fem = float(county.hc03_est_vc12)
-            male = float(county.hc02_est_vc12)
+        if county.hc02_est_vc11 != "null" and county.hc02_est_vc11 is not None and county.hc03_est_vc11 != "null" and county.hc03_est_vc11 is not None:
+            fem = float(county.hc03_est_vc11)
+            male = float(county.hc02_est_vc11)
             maxbiking = max(male,fem)
             bikingdict[county.geo_id] = ((male-fem)/maxbiking)
 
@@ -136,8 +136,19 @@ def mergeline():
             male = float(county.hc02_est_vc12)
             maxbiking = max(male,fem)
             bikingdict[county.geo_id] = ((male-fem)/maxbiking)
+    
+    eco = defaultdict(dict)
+    ecorows = Transportation.query.all()
+    for ecorow in ecorows:
+        a = ecorow.hc01_est_vc04
+        b = ecorow.hc01_est_vc10
+        c = ecorow.hc01_est_vc11
+        if  a != "null" and b != "null" and c != "null" and a is not None and b is not None and c is not None:
+            eco[ecorow.geo_id][ecorow.year] = float(ecorow.hc01_est_vc04) + float(ecorow.hc01_est_vc10) + float(ecorow.hc01_est_vc11)
+        else:
+            eco[ecorow.geo_id][ecorow.year] = 0
 
-    return render_template('views/merge.html', datadict = datadict, datadict3=datadict3, bikingdict=bikingdict)
+    return render_template('views/merge.html', datadict = datadict, datadict3=datadict3, bikingdict=bikingdict, eco=eco)
 #------------------------
 # Launcher `~=}}}}>
 #------------------------
