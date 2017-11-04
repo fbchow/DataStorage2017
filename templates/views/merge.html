@@ -3,6 +3,18 @@
 {% block content %}
 
 
+How do Floridians get to work? Using data from the American Community Survey (ACS), we observe the changes in transportation behaviors over time. 
+
+
+<h3>Data</h3>    
+We obtained the data from American Community Survey (ACS), which is an ongoing survey conducted by the U.S. Census Bureau. The ACS provides communities a bird’s-eye view at how they are changing over the years. The ACS collects information, such as race, age, income, commute time to work, and other important data.  
+
+It’s important to note that ACS, including the commute data below, is based on a sample and is subject to sampling variability. The ACS selects 3.5 million housing unit addresses annually, across every county in the nation. This means that there is an element of statistical uncertainty in data that our visualizations are based on. The original ACS Commuting Characteristics Data defines this degree of uncertainty by including a 90% margin of error. We are 90% confident that the point estimate plus the margin of error will contain the true value. For simplicity, we decided to not include these margins of errors and solely visualize the point estimates.
+
+<h2>First Things First: Florida Growth</h2> 
+Before we divulge into commute data, we must observe the marked growth of workers in Florida in recent years. The majority of counties are experiencing a growth in the workforce, which will consequently change commuting behavior. We explicitly look at the percent of workers over the age of 16 instead of population growth because we are specifically interested in the population commuting to work in a state traditionally known as a retiree state.
+
+
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
 
@@ -182,8 +194,13 @@
     }
 
   </script>
+
+ <h2>How long does it take to get to work?</h2>
+
   <p style="font-size:16px;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non risus libero. Vivamus ut semper risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sodales arcu at libero elementum, eget condimentum eros mollis. Integer aliquam iaculis quam, in imperdiet purus posuere eget. Aliquam augue metus, interdum ac augue nec, facilisis egestas mauris. Donec non ultrices elit, nec gravida ligula. Praesent vel ligula varius, volutpat est ac, tincidunt ante. Vestibulum malesuada ipsum eget pellentesque faucibus. Praesent non varius massa, sed bibendum urna. Ut eu nulla luctus turpis suscipit viverra sed eu orci. Curabitur pellentesque et tortor ut aliquam. Integer tincidunt id arcu a tristique. Vestibulum ex felis, accumsan at erat at, sagittis congue nulla. Quisque nunc erat, suscipit vitae tristique ac, lacinia ut nibh. Donec consequat volutpat elit, ultrices tincidunt justo.
+         
+		Note how the mean travel time to work for most Florida counties are longer than the commute for the mean travel time of the average American. See the purple line where        County has the longest commute in 2013. Over time, most commutes are getting progressively longer. This could be attributed to growth in working population and increased traffic congestion.  
+
 </p>
 
   <div id="commute_chart" style="width: 900px; height: 500px"></div>
@@ -242,8 +259,19 @@
   
     </script>
 
+    <h1>
+    	Eco-Friendly Commuters  
+    </h1>
+    <h6>
+    	We binned types of commutes, such as bicycling, carpooling, and telecommuting, into a category called “eco-friendly”. 
+    </h6>
+
+    <h2>
+    	Biking Commutes of Males vs Females  
+    </h2>
+
     <p style="font-size:16px;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non risus libero. Vivamus ut semper risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sodales arcu at libero elementum, eget condimentum eros mollis. Integer aliquam iaculis quam, in imperdiet purus posuere eget. Aliquam augue metus, interdum ac augue nec, facilisis egestas mauris. Donec non ultrices elit, nec gravida ligula. Praesent vel ligula varius, volutpat est ac, tincidunt ante. Vestibulum malesuada ipsum eget pellentesque faucibus. Praesent non varius massa, sed bibendum urna. Ut eu nulla luctus turpis suscipit viverra sed eu orci. Curabitur pellentesque et tortor ut aliquam. Integer tincidunt id arcu a tristique. Vestibulum ex felis, accumsan at erat at, sagittis congue nulla. Quisque nunc erat, suscipit vitae tristique ac, lacinia ut nibh. Donec consequat volutpat elit, ultrices tincidunt justo.
+            We also observed the relationship between gender and cycling for every county. Traditionally cycling is perceived as “too dangerous” for women. It is interesting how the male-to-female cycling ratio for Mario County, Orange County, St. Lucie County has a higher proportion of females to males biking. 
     </p>
     
     <div id="biking_div" style="width: 900px; height: 1000px"></div>
@@ -312,8 +340,13 @@
         }
     
       </script>
+
+      <h2>
+      	Eco-Friendly Commuters
+      </h2>
+
       <p style="font-size:16px;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non risus libero. Vivamus ut semper risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sodales arcu at libero elementum, eget condimentum eros mollis. Integer aliquam iaculis quam, in imperdiet purus posuere eget. Aliquam augue metus, interdum ac augue nec, facilisis egestas mauris. Donec non ultrices elit, nec gravida ligula. Praesent vel ligula varius, volutpat est ac, tincidunt ante. Vestibulum malesuada ipsum eget pellentesque faucibus. Praesent non varius massa, sed bibendum urna. Ut eu nulla luctus turpis suscipit viverra sed eu orci. Curabitur pellentesque et tortor ut aliquam. Integer tincidunt id arcu a tristique. Vestibulum ex felis, accumsan at erat at, sagittis congue nulla. Quisque nunc erat, suscipit vitae tristique ac, lacinia ut nibh. Donec consequat volutpat elit, ultrices tincidunt justo.
+            Note how the the top percent of "eco-friendly" commuters are from    Coundy and Alachua County.  
     </p>
       <div id="eco_chart" style="width: 900px; height: 500px"></div>
       
@@ -465,7 +498,7 @@
             <div id="tooltip" class="tooltip"></div>
 
             <p style="font-size:16px;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non risus libero. Vivamus ut semper risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sodales arcu at libero elementum, eget condimentum eros mollis. Integer aliquam iaculis quam, in imperdiet purus posuere eget. Aliquam augue metus, interdum ac augue nec, facilisis egestas mauris. Donec non ultrices elit, nec gravida ligula. Praesent vel ligula varius, volutpat est ac, tincidunt ante. Vestibulum malesuada ipsum eget pellentesque faucibus. Praesent non varius massa, sed bibendum urna. Ut eu nulla luctus turpis suscipit viverra sed eu orci. Curabitur pellentesque et tortor ut aliquam. Integer tincidunt id arcu a tristique. Vestibulum ex felis, accumsan at erat at, sagittis congue nulla. Quisque nunc erat, suscipit vitae tristique ac, lacinia ut nibh. Donec consequat volutpat elit, ultrices tincidunt justo.
+                     Since the sun rises on the East coast of Florida approximately 10 min earlier than the West coast of Florida, we wanted to explore the relationship between geography and times that commuters leave the house. 
             </p>
             
 <script src="http://d3js.org/d3.v3.min.js"></script>
