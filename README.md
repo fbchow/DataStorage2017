@@ -1,61 +1,23 @@
 # README
 
-Create a branch of this repo for your project.
+How do Floridians get to work? Using data from the American Community Survey (ACS), we observe the changes in transportation behaviors over time. 
 
-Replace this README with an introduction to your project, including instructions for how to view the deployed web page and requirements for building it.
+Extracted data from American Community Survey (conducted by Census Bureau) 
+https://www.census.gov/programs-surveys/acs/data/data-via-ftp.html
 
-You may use this space for a full description of your questions and results, or you may point to other documents, including your web page.  
+To view deployed webpage:
+access /var/www/Transportation/Transportation/usTransportation
+in the terminal type: python app.py
+navigate in the browser to the specified link
 
 
-Flask app
-deploy via ncf server?  
+Requirements for building it in the requirements.txt file. (pip install -r requirements.txt)
 
-#HOW TO RUN ON YOUR OWN LOCAL MACHINE
-`$ python routes.py`
-
-# possible file tree
- * routes.py
- * templates 
-	* contains all the templates for Flask
- * static
-	* contains all the static content, like css
- 
- 
-
+Full description of questions and data in the Transportation app.
 
 # Project
 
 Pick a data set, and ask some questions about it. To explore your questions, build a web app with Python and PostgreSQL which exposes views of the data in tables, forms for entering queries, and/or graphs and other visualizations.
-
-Extract data from American Community Survey (conducted by Census Bureau) 
-https://www.census.gov/programs-surveys/acs/data/data-via-ftp.html
-
-For ideas you can go to
-
-- [kaggle](https://www.kaggle.com/datasets)
-- [Yelp](https://www.yelp.com/dataset)
-- [FRED](https://fred.stlouisfed.org/)
-- Etc.
-
-# Teams
-
-This is a team assignment. See the Project Teams spreadsheet in the General module for your teammate. This is Project 1.
-
-Please submit a peer review to Canvas. It should be a short sentence about your own contribution and your partner's contribution in each of the following areas:
-
-- availability and commitment to meeting
-- communication
-- relevant technical skill
-- willingness to work 
   
 ### Authors  
-[@fbchow](https://github.com/fbchow), [@kevinisagirl](https://github.com/kevinisagirl), [@raptortech-js](https://github.com/raptortech-js)     
-
-
- 
-
- 
-
- 
-
- 
+[@fbchow](https://github.com/fbchow), [@kevinisagirl](https://github.com/kevinisagirl), [@raptortech-js](https://github.com/raptortech-js)

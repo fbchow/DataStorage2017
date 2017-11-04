@@ -12,7 +12,7 @@ We obtained the data from American Community Survey (ACS), which is an ongoing s
 It’s important to note that ACS, including the commute data below, is based on a sample and is subject to sampling variability. The ACS selects 3.5 million housing unit addresses annually, across every county in the nation. This means that there is an element of statistical uncertainty in data that our visualizations are based on. The original ACS Commuting Characteristics Data defines this degree of uncertainty by including a 90% margin of error. We are 90% confident that the point estimate plus the margin of error will contain the true value. For simplicity, we decided to not include these margins of errors and solely visualize the point estimates.
 
 <h2>First Things First: Florida Growth</h2> 
-Before we divulge into commute data, we must observe the marked growth of workers in Florida in recent years. The majority of counties are experiencing a growth in the workforce, which will consequently change commuting behavior. We explicitly look at the percent of workers over the age of 16 instead of population growth because we are specifically interested in the population commuting to work in a state traditionally known as a retiree state.
+Before we divulge into commute data, we must observe the marked growth of workers in Florida in recent years. The majority of counties are experiencing a growth in the workforce, which will consequently change commuting behavior. We explicitly look at the change in the percent of workers over the age of 16 instead of population growth because we are specifically interested in the population commuting to work in a state traditionally known as a retiree state.
 
 
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
@@ -196,7 +196,7 @@ Before we divulge into commute data, we must observe the marked growth of worker
   </script>
 
  <h2>How long does it take to get to work?</h2>
-		We compared the top 5 counties with longest average commute times (in minutes) with the average American commute time and the average Floridian commute time. Note how the mean travel time to work for most Florida counties are longer than the commute for the mean travel time of the average American. We observed that the purple line indicating that Manatee County has the longest overall commute time, particularly in 2013. Over time, most commutes are getting progressively longer. This could be attributed to growth in working population and increased traffic congestion.  
+		In those the 5 counties with the largest percent increase in workers over 16 years of age, we were curious about the effect an increase in commuters might have on the average commute times (in minutes). with the average American commute time and the average Floridian commute time. It appears there is a trend of commutes getting longer. This could be attributed to growth in working population and increased traffic congestion (further statistical analyses would be necessary to further analyze this question).  
 
 
   <div id="commute_chart" style="width: 900px; height: 500px"></div>
@@ -258,7 +258,7 @@ Before we divulge into commute data, we must observe the marked growth of worker
     <h1>
     	Eco-Friendly Commuters  
     </h1>
-    	We binned types of commutes, such as bicycling, carpooling, and telecommuting, into a category called “eco-friendly”.  
+    	We binned bicycling, carpooling, and walking commutes into a category called “eco-friendly”.  We were curious if Floridians were commuting in more eco-friendly ways since 2010.
 
     <h2>
     	Biking Commutes of Males vs Females  
@@ -340,7 +340,7 @@ Before we divulge into commute data, we must observe the marked growth of worker
       </h2>
 
       <p style="font-size:16px;">
-            Note how the the top percent of "eco-friendly" commuters are from Monroe County and Alachua County respectively.  
+            Note how the the top percent of "eco-friendly" commuters are from Monroe County and Alachua County respectively. There does not appear to be an increase in "eco-friendly" commutes in Florida between 2010 and 2016. This does not take vehicle fuel efficiency into consideration.
     </p>
       <div id="eco_chart" style="width: 900px; height: 500px"></div>
       
@@ -489,7 +489,7 @@ Before we divulge into commute data, we must observe the marked growth of worker
             <div id="tooltip" class="tooltip"></div>
 
             <p style="font-size:16px;">
-                     Since the sun rises on the East coast of Florida approximately 10 min earlier than the West coast of Florida, we wanted to explore the relationship between geography and times that commuters leave the house. We observed a stark contrast in the leave-the-house times of the two coasts of Florida.  
+                     Since the sun rises on the east coast of Florida approximately 10 minutes earlier than the west coast of Florida, we wanted to explore the relationship between geography and times that commuters leave the house. We visualized the percentage of workers leaving for work between 7:00 am and 7:30 am (around sunrise). From this visualization it is possible there is a difference between the coasts. (Statistical analyses are necessary to further investigate.)  
             </p>
             
 <script src="http://d3js.org/d3.v3.min.js"></script>

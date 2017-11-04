@@ -6,9 +6,10 @@ from collections import defaultdict
 app = Flask(__name__)
 
 POSTGRES = {
-    'user': 'postgres',
-    'pw': 'postgres',
-    'db': 'postgres',
+    'user': 'khunt',
+# replace pw
+    'pw': '#####',
+    'db': 'khunt',
     'host': 'localhost',
     'port': '5432',
 }
